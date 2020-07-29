@@ -2,23 +2,24 @@ version: '3'
 
 services:
   gds_front:
-    image: node:12.18.2
+    build: ./front
     container_name: gds_front
     ports:
       - 3000:3000
     volumes:
       - ./front/:/src
-    working_dir: /src
-  gds_back:
-    image: node:12.18.2
-    container_name: gds_back
-    ports:
-      - 4000:4000
-    volumes:
-      - ./back/:/src
-    working_dir: /src
-    depends_on:
-      - gds_db
+    command: "yarn start"
+    tty: true
+  # gds_back:
+  #   image: node:12.18.2
+  #   container_name: gds_back
+  #   ports:
+  #     - 4000:4000
+  #   volumes:
+  #     - ./back/:/src
+  #   working_dir: /src
+  #   depends_on:
+  #     - gds_db
   gds_db:
     image: mysql:5.7
     container_name: gds_db
