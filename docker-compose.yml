@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  gds_front:
+    image: node:12.18.2
+    container_name: gds_front
+    ports:
+      - 3000:3000
+    volumes:
+      - ./front/:/src
+    working_dir: /src
+  gds_back:
+    image: node:12.18.2
+    container_name: gds_back
+    ports:
+      - 4000:4000
+    volumes:
+      - ./back/:/src
+    working_dir: /src
+    depends_on:
+      - gds_db
+  gds_db:
+    image: mysql:5.7
+    container_name: gds_db
+    command:
+      - --sql-mode=NO_ENGINE_SUBSTITUTION
+    ports:
+      - 5000:3306
+    environment:
+      - MYSQL_DATABASE=gds_database
+      - MYSQL_USER=hiroto
+      - MYSQL_PASSWORD=yohi1208Qiut22
+      - MYSQL_ROOT_PASSWORD=yohi1208Qiut22
+    volumes:
+      - ./.docker/mysql/etc-mysql.cnf:/etc/mysql/conf.d/etc-mysql.cnf
+      - ./.docker/mysql/init:/docker-entrypoint-initdb.d
+volumes:
+  db-data:
+    driver: local
