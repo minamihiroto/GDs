@@ -7,7 +7,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./front/:/src
+      - ./front/:/usr/src
     command: "yarn start"
     tty: true
   # gds_back:
@@ -16,8 +16,8 @@ services:
   #   ports:
   #     - 4000:4000
   #   volumes:
-  #     - ./back/:/src
-  #   working_dir: /src
+  #     - ./back/:/usr/src
+  #   working_dir: /usr/src
   #   depends_on:
   #     - gds_db
   gds_db:
