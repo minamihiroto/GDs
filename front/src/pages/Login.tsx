@@ -1,13 +1,24 @@
 import React, { FunctionComponent } from "react";
 import styled from "styled-components";
+import { Header, Footer } from "../components/layout";
+import { Link } from "react-router-dom";
+import { TheSnSButton } from "../components/parts";
 
-const LoginStyle = styled.div`
+const LoginContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #ffffff;
   width: 400px;
-  background: white;
-  margin: 0 auto;
   padding: 30px;
   text-align: center;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  .mb-20 {
+    margin-bottom: 20px;
+  }
 
   & div {
     margin-bottom: 30px;
@@ -34,11 +45,11 @@ const LoginStyle = styled.div`
     }
   }
 
-  & button {
-    display: block;
+  .login_btn {
     padding: 10px 30px;
+    background: #0094e8;
+    border-radius: 46px;
     color: white;
-    margin: auto;
     border: none;
     cursor: pointer;
     font-size: 15px;
@@ -50,11 +61,6 @@ const LoginStyle = styled.div`
     &:hover {
       opacity: 0.75;
     }
-  }
-
-  & .login_btn {
-    background: #0094e8;
-    border-radius: 46px;
   }
 
   & .login_sns_btn {
@@ -71,11 +77,6 @@ const LoginStyle = styled.div`
     }
   }
 
-  & hr {
-    margin: 20px auto;
-    width: 300px;
-  }
-
   & a {
     display: block;
     color: black;
@@ -87,21 +88,38 @@ const LoginStyle = styled.div`
   }
 `;
 
+const Main = styled.main`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 1000px;
+  background: #f0f0f0;
+`;
+
+const LoginStyle = styled.div``;
+
 const Login: FunctionComponent = () => {
   return (
     <LoginStyle>
-      <div>
-        <h1>GDs</h1>
-        <p>ログイン</p>
-      </div>
-      <input type="text" placeholder="メールアドレス" />
-      <input type="text" placeholder="パスワード" />
-      <button className="login_btn">ログイン</button>
-      <hr />
-      <button className="login_sns_btn -t">twitterでログイン</button>
-      <button className="login_sns_btn -f">facebookでログイン</button>
-      <a href="/">パスワードを忘れた方</a>
-      <a href="/">アカウントを持っていない方</a>
+      <Header />
+      <Main>
+        <LoginContainer>
+          <div>
+            <h1>GDs</h1>
+            <p>ログイン</p>
+          </div>
+          <input type="text" placeholder="メールアドレス" />
+          <input type="text" placeholder="パスワード" />
+          <button className="login_btn mb-20">ログイン</button>
+          <TheSnSButton className="mb-20" name="Twitterでログイン" color="#00acee"/>
+          <TheSnSButton className="mb-20" name="Facebookでログイン" color="#3b5998"/>
+          <a href="/">パスワードを忘れた方</a>
+          <Link to="/register">アカウントを持っていない方</Link>
+        </LoginContainer>
+      </Main>
+      <Footer />
     </LoginStyle>
   );
 };
