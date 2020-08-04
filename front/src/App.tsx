@@ -1,134 +1,107 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import { createGlobalStyle } from "styled-components";
+import Routes from "./Routes";
 
-const Header = styled.header`
-  width:100%;
-  height:100px;
-  background: #FFFFFF;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  position: fixed;
-  top: 0;
-  left:0;
+// グローバルスタイル
+const GlobalStyle = createGlobalStyle`
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
 
-  & div{
-    width: 0;
-	  height: 0;
-	  border-bottom: 100px solid transparent;
-    border-left: 1000px solid #0094E8;
-  }
-  
-  & a{
-    position: absolute;
-    top: 17.5px;
-    left: 5%;
-    color: white;
-    font-weight: 500;
-    font-size: 55px;
-    text-decoration: none;
-  }
+body {
+    line-height:1;
+}
 
-  & input{
-    position: absolute;
-    width: 378px;
-    height: 38px;
-    left: 270px;
-    top: 28px;
-    border-radius: 19px;
-  }
-`;
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
 
-const Body = styled.div`
-  padding-top: 150px;
+nav ul {
+    list-style:none;
+}
 
-  & div{
-    display: flex;
-    width: 820px;
-    height: 70px;
-    margin: 50px auto;
-    justify-content: space-between;
+blockquote, q {
+    quotes:none;
+}
 
-    & h2{
-      display: inline;
-    }
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
 
-    & input{
-      width: 550px;
-      height: 50px;
-      display:inline;
-      vertical-align:middle;
-      padding: 0;
-      margin-top:8px;
-      border-radius: 9px;
-    }
-  }
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
 
-  & .btn{
-    display: block;
-    padding: 10px 30px;
-    color: white;
-    margin: 20px auto;
-    border: none;
-    cursor: pointer;
-    font-size:20px;
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
 
-    &:hover{
-      opacity: 0.75;
-    }
-  }
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
 
-  & .login_btn{
-    background: #0094E8;
-    border-radius: 46px;
-  }
+del {
+    text-decoration: line-through;
+}
 
-  & .login_sns_btn{
-    background: #DB5959;
-    border-radius: 17px;
-  }
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
 
-  & hr {
-    margin: 50px auto;
-    width:1000px;
-    }
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
 
-  & a{
-    color:black;
-    text-align: center;
-    margin-bottom:20px;
-  }
-`;
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
 
-const Footer = styled.footer`
-  background: #6D6D6D;
-  height:400px;
+input, select {
+    vertical-align:middle;
+}
 `;
 
 function App() {
   return (
     <>
-      <Header>
-        <div></div>
-        <a href="/">GDs</a>
-        <input type="text"/>
-      </Header>
-      <Body>
-        <div>
-          <h2>メールアドレス</h2>
-          <input type="text" />
-        </div>
-        <div>
-          <h2>パスワード</h2>
-          <input type="text" />
-        </div>
-        <button className="login_btn btn">ログイン</button>
-        <hr/>
-        <button className="login_sns_btn btn">twitterでログイン</button>
-        <button className="login_sns_btn btn">facebookでログイン</button>
-        <a href="/">アカウントを持っていない方</a>
-      </Body>
-      <Footer>
-
-      </Footer>
+      <GlobalStyle />
+      <Routes />
     </>
   );
 }
