@@ -95,6 +95,18 @@ hr {
 input, select {
     vertical-align:middle;
 }
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
 `;
 
 function App() {

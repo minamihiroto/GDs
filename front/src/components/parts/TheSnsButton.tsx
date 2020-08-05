@@ -2,14 +2,14 @@ import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 
 const TheSnsButtonStyle = styled.button`
-  border-radius: 17px;
+  border-radius: 16px;
   width: 200px;
-  height: 50px;
-  padding: 8px 16px;
+  height: 44px;
+  padding: 4px 16px;
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 16px;
 
   &:focus {
     outline: 0;
