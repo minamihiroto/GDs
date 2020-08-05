@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 const HeaderBar = styled.header`
   width:100%;
@@ -50,7 +51,7 @@ const Header = () => {
   return (
     <HeaderBar>
       <div></div>
-      <a href="/">GDs</a>
+      <Link to="/">GDs</Link>
       <input type="text" placeholder="検索" />
     </HeaderBar>
   )
