@@ -4,6 +4,15 @@ import { Header, Footer } from "../components/layout";
 import { Link } from "react-router-dom";
 import { TheSnSButton, TheButton, TheInput } from "../components/parts";
 
+const Main = styled.main`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 800px;
+  background: #f0f0f0;
+`;
+
 const LoginContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,43 +24,31 @@ const LoginContainer = styled.div`
   text-align: center;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
-  & div h1,
-  p {
+  & .lTitle h1,p {
     display: inline;
   }
-  
-  & hr{
-    width: 300px;
-    margin: 0;
-  }
 
-  & a {
+  & a{
     display: block;
     color: black;
     &:hover {
       opacity: 0.75;
     }
   }
-`;
 
-const Main = styled.main`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 800px;
-  background: #f0f0f0;
+  & hr{
+    width: 300px;
+    margin: 0;
+  }
 `;
-
-const LoginStyle = styled.div``;
 
 const Login: FunctionComponent = () => {
   return (
-    <LoginStyle>
+    <>
       <Header />
       <Main>
         <LoginContainer>
-          <div className="mb-20">
+          <div className="lTitle mb-20">
             <h1>GDs</h1>
             <p>ログイン</p>
           </div>
@@ -66,7 +63,7 @@ const Login: FunctionComponent = () => {
         </LoginContainer>
       </Main>
       <Footer />
-    </LoginStyle>
+    </>
   );
 };
 
