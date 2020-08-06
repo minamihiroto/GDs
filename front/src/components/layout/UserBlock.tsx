@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const UserblockStyle = styled.div`
   width:484px;
@@ -27,6 +28,7 @@ const UserblockStyle = styled.div`
     position:absolute;
     top:10px;
     left:20px;
+    text-decoration: none;
     
     & img,h1{
       display:inline;
@@ -48,10 +50,10 @@ const UserBlock: FunctionComponent = () => {
     <>
       <UserblockStyle className="mb-40 ta-c">
         <div className="triangle"></div>
-        <div className="user-names">
+        <Link to="/" className="user-names">
           <img src={`${process.env.PUBLIC_URL}/Introduce-1.png`} />
           <h1 className="ml-12 fs-28">林　桜子</h1>
-        </div>
+        </Link>
         <p className="dp-in">関西の私立大学に通う3年生
         です。〜〜〜〜〜〜〜〜。〜
         〜〜〜〜〜〜、〜〜〜〜〜〜〜〜〜〜〜〜〜
