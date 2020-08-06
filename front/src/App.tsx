@@ -96,16 +96,96 @@ input, select {
     vertical-align:middle;
 }
 
-.mb-20 {
-  margin-bottom: 20px;
+.mt-16{
+    margin-top:16px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-80 {
+  margin-top: 80px;
 }
 
 .mb-8 {
   margin-bottom: 8px;
 }
 
-.mt-20 {
-  margin-top: 20px;
+.mb-12 {
+  margin-bottom: 12px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-80 {
+  margin-bottom: 80px;
+}
+
+.mb-160 {
+  margin-bottom: 160px;
+}
+
+.ml-12{
+    margin-left:12px;
+}
+
+.ml-80{
+    margin-left:80px;
+}
+
+.gds-color{
+    color: #0094E8;
+}
+
+.fs-48{
+    font-size:48px;
+}
+
+.fs-36{
+    font-size:36px;
+}
+
+.fs-28{
+    font-size:28px;
+}
+
+.fs-20{
+    font-size:20px;
+}
+
+.fs-16{
+    font-size:16px;
+}
+
+.dp-bl{
+    display:block;
+}
+
+.dp-in{
+    display:inline;
+}
+
+.ta-c{
+    text-align:center;
+}
+
+.black{
+    color:#000000;
+}
+
+.white{
+    color:#ffffff;
 }
 `;
 
