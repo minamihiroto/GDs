@@ -144,12 +144,28 @@ input, select {
     margin-left:12px;
 }
 
+.ml-20{
+    margin-left:20px;
+}
+
+.ml-40{
+    margin-left:40px;
+}
+
 .ml-80{
     margin-left:80px;
 }
 
+.mr-12{
+    margin-right:12px;
+}
+
 .mr-20{
     margin-right:20px;
+}
+
+.mr-40{
+    margin-right:40px;
 }
 
 .mr-80{
