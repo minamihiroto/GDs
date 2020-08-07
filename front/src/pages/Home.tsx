@@ -57,7 +57,6 @@ const Home: FunctionComponent = () => {
     <>
       <Header />
       <Main>
-        <h2 className="gds-color mt-20 mb-80 ml-80 fs-36 section-t">GDsとは？</h2>
         <h1 className="gds-color mb-80 fs-48">全国の就活生とグループディスカッションを。</h1>
         <Introduce className="mb-160">
           <IntroduceBox>
@@ -90,7 +89,7 @@ const Home: FunctionComponent = () => {
           <GdsBlock />
           <GdsBlock />
         </GdsBlocks>
-        <div className="ta-c mb-16 mt-16"><Link to="/" className="black">もっと見る</Link></div>
+        <div className="ta-c mb-16 mt-16"><Link to="/search" className="black">もっと見る</Link></div>
         <h2 className="gds-color mt-80 mb-80 ml-80 fs-36 section-t">注目のユーザー</h2>
         <UserBlocks>
           <UserBlock />

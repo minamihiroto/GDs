@@ -104,6 +104,10 @@ input, select {
   margin-top: 20px;
 }
 
+.mt-48{
+    margin-top:48px;
+}
+
 .mt-80 {
   margin-top: 80px;
 }
@@ -144,6 +148,18 @@ input, select {
     margin-left:80px;
 }
 
+.mr-20{
+    margin-right:20px;
+}
+
+.mr-80{
+    margin-right:80px;
+}
+
+.mr-320{
+    margin-right:320px;
+}
+
 .gds-color{
     color: #0094E8;
 }
@@ -178,6 +194,10 @@ input, select {
 
 .ta-c{
     text-align:center;
+}
+
+.ta-r{
+    text-align:right;
 }
 
 .black{
