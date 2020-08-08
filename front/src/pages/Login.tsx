@@ -11,6 +11,8 @@ const Main = styled.main`
   width: 100%;
   height: 800px;
   background: #f0f0f0;
+  max-width: 1440px;
+  margin: 0 auto;
 `;
 
 const LoginContainer = styled.div`

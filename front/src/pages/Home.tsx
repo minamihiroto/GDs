@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 
 const Main = styled.main`
   padding-top:100px;
+  max-width: 1440px;
+  margin: 0 auto;
   
   & .section-t{
     text-decoration-line: underline;

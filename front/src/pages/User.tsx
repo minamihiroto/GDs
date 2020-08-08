@@ -7,6 +7,9 @@ import { TheButton } from "../components/parts";
 const Profile = styled.div`
   text-align:center;
   padding-top: 100px;
+  max-width: 1440px;
+  margin: 0 auto;
+  
   & .user-photo{
     height:400px;
     width:400px;

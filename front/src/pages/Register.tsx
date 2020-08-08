@@ -11,6 +11,8 @@ const Main = styled.main`
   justify-content: center;
   height: 800px;
   background: #f0f0f0;
+  max-width: 1440px;
+  margin: 0 auto;
 `;
 
 const RegisterContainer = styled.div`
