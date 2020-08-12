@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
-import { Login, Register, Home } from "./pages";
+import { Login, Register, Home ,Search,User,Follow,Review} from "./pages";
 
 const Routes = () => {
   return (
@@ -9,6 +9,10 @@ const Routes = () => {
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
+        <Route exact path="/search" component={Search} />
+        <Route exact path="/user" component={User} />
+        <Route exact path="/follow" component={Follow} />
+        <Route exact path="/review" component={Review} />
       </Switch>
     </BrowserRouter>
   );
