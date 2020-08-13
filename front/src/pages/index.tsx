@@ -7,5 +7,6 @@ import Follow from "./Follow";
 import Review from "./Review";
 import Post from "./Post";
 import Show from "./Show";
+import After from "./After"
 
-export { Home, Login, Register, Search, User ,Follow,Review,Post ,Show};
+export { Home, Login, Register, Search, User ,Follow,Review,Post ,Show,After};
