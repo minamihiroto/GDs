@@ -8,5 +8,6 @@ import Review from "./Review";
 import Post from "./Post";
 import Show from "./Show";
 import After from "./After"
+import ReviewPost from "./ReviewPost"
 
-export { Home, Login, Register, Search, User ,Follow,Review,Post ,Show,After};
+export { Home, Login, Register, Search, User, Follow, Review, Post, Show, After, ReviewPost};
