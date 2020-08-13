@@ -14,6 +14,7 @@ const UserReviews = styled.div`
 display: flex;
 justify-content: space-around;
 flex-wrap: wrap;
+padding:0 150px;
 `;
 
 const After: FunctionComponent = () => {
