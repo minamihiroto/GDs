@@ -5,5 +5,6 @@ import Search from "./Search";
 import User from "./User";
 import Follow from "./Follow";
 import Review from "./Review";
+import Post from "./Post";
 
-export { Home, Login, Register, Search, User ,Follow,Review };
+export { Home, Login, Register, Search, User ,Follow,Review,Post };

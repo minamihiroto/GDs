@@ -188,6 +188,10 @@ input, select {
     font-size:36px;
 }
 
+.fs-32{
+    font-size:32px;
+}
+
 .fs-28{
     font-size:28px;
 }
