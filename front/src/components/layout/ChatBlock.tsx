@@ -2,9 +2,9 @@ import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const GdsblockStyle = styled.div`
+const ChatblockStyle = styled.div`
   width:760px;
-  height: 200px;
+  height: 240px;
   background: #ffffff;
   text-align: center;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -33,10 +33,11 @@ const GdsblockStyle = styled.div`
   }
 
   & .gds-name{
-    display:block;
+    display:flex;
+    align-items:center;
     position:absolute;
-    top:128px;
-    left:16px;
+    top:172px;
+    left:372px;
     text-decoration: none;
     & img,p{
       display:inline;
@@ -51,35 +52,26 @@ const GdsblockStyle = styled.div`
     }
   }
 
-  & .gds-rate{
-    position:absolute;
-    top:156px;
-    left:600px;
-    & h3,h2{
-      display:inline;
-    }
-  }
-
 `;
 
-const GdsBlock: FunctionComponent = () => {
+const ChatBlock: FunctionComponent = () => {
   return (
     <>
-      <GdsblockStyle className="mb-40">
+      <ChatblockStyle>
         <div className="triangle"></div>
         <h1 className="date fs-20">2021年3月6日</h1>
         <Link to="/" className="gds-title fs-28 gds-color">企画職を目指している22卒でGDしましょう</Link>
+        <p className="fs-20 mt-12">誰々：あああああああああああああああああああああ...</p>
         <Link to="/" className="gds-name">
-          <img src={`${process.env.PUBLIC_URL}/Introduce-1.png`} />
-          <p className="fs-20 ml-12">山田　太郎</p>
+          <p className="fs-20 ml-12">メンバー：</p>
+          <img src={`${process.env.PUBLIC_URL}/Introduce-1.png`} className="ml-12"/>
+          <img src={`${process.env.PUBLIC_URL}/Introduce-1.png`} className="ml-12" />
+          <img src={`${process.env.PUBLIC_URL}/Introduce-1.png`} className="ml-12" />
+          <img src={`${process.env.PUBLIC_URL}/Introduce-1.png`} className="ml-12" />
         </Link>
-        <div className="gds-rate">
-          <h3 className="fs-16">募集人数：</h3>
-          <h2 className="fs-28">4/5</h2>
-        </div>
-      </GdsblockStyle >
+      </ChatblockStyle >
     </>
   );
 };
 
-export default GdsBlock;
+export default ChatBlock;

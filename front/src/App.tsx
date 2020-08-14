@@ -96,6 +96,10 @@ input, select {
     vertical-align:middle;
 }
 
+.mt-12{
+    margin-top:12px;
+}
+
 .mt-16{
     margin-top:16px;
 }
@@ -186,6 +190,10 @@ input, select {
 
 .fs-36{
     font-size:36px;
+}
+
+.fs-32{
+    font-size:32px;
 }
 
 .fs-28{

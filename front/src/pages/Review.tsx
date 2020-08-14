@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 import { Header, Footer} from "../components/layout";
-import { Link } from "react-router-dom";
 
 const Main = styled.main`
 padding:100px 0px;
