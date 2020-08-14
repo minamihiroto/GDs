@@ -28,7 +28,6 @@ const GdsblockStyle = styled.div`
   & .gds-title{
   position:relative;
   top:-8px;
-  color:#000000;
   text-decoration: none;
   font-weight: bold;
   }
