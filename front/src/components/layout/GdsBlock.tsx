@@ -69,7 +69,7 @@ const GdsBlock: FunctionComponent = () => {
       <GdsblockStyle className="mb-40">
         <div className="triangle"></div>
         <h1 className="date fs-20">2021年3月6日</h1>
-        <Link to="/" className="gds-title fs-28">企画職を目指している22卒でGDしましょう</Link>
+        <Link to="/" className="gds-title fs-28 gds-color">企画職を目指している22卒でGDしましょう</Link>
         <Link to="/" className="gds-name">
           <img src={`${process.env.PUBLIC_URL}/Introduce-1.png`} />
           <p className="fs-20 ml-12">山田　太郎</p>
