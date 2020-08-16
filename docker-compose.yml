@@ -10,16 +10,17 @@ services:
       - ./front/:/usr/src
     command: "yarn start"
     tty: true
-  # gds_back:
-  #   image: node:12.18.2
-  #   container_name: gds_back
-  #   ports:
-  #     - 4000:4000
-  #   volumes:
-  #     - ./back/:/usr/src
-  #   working_dir: /usr/src
-  #   depends_on:
-  #     - gds_db
+  gds_back:
+    build: ./back
+    container_name: gds_back
+    ports:
+      - 4000:4000
+    volumes:
+      - ./back/:/usr/src
+    depends_on:
+      - gds_db
+    command: "npm run start:dev"
+    tty: true
   gds_db:
     image: mysql:5.7
     container_name: gds_db
