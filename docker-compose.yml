@@ -5,16 +5,28 @@ services:
     build: ./front
     container_name: gds_front
     ports:
-      - 3000:3000
+      - 8000:3000
     volumes:
       - ./front/:/usr/src
     command: "yarn start"
     tty: true
+  # gds_back:
+  #   build: ./back
+  #   container_name: gds_back
+  #   ports:
+  #     - 4000:4000
+  #   volumes:
+  #     - ./back/:/usr/src
+  #   depends_on:
+  #     - gds_db
+  #   command: "npm run start:dev"
+  #   tty: true
   gds_back:
-    build: ./back
+    build: ./back_rails
+    command: /bin/sh -c "rm -f /myapp/tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     container_name: gds_back
     ports:
-      - 4000:4000
+      - 3000:3000
     volumes:
       - ./back/:/usr/src
     depends_on:
