@@ -5,21 +5,21 @@ services:
     build: ./front
     container_name: gds_front
     ports:
-      - 3000:3000
+      - 3001:3000
     volumes:
       - ./front/:/usr/src
     command: "yarn start"
     tty: true
   gds_back:
-    build: ./back
+    build: ./back_rails
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     container_name: gds_back
     ports:
-      - 4000:4000
+      - 4000:3000
     volumes:
-      - ./back/:/usr/src
+      - ./back_rails/:/web
     depends_on:
       - gds_db
-    command: "npm run start:dev"
     tty: true
   gds_db:
     image: mysql:5.7
@@ -27,7 +27,7 @@ services:
     command:
       - --sql-mode=NO_ENGINE_SUBSTITUTION
     ports:
-      - 5000:3306
+      - 6000:3306
     environment:
       - MYSQL_DATABASE=gds_database
       - MYSQL_USER=hiroto
