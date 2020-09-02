@@ -2,20 +2,20 @@ default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV.fetch("MYSQL_USERNAME", "hiroto") %>
-  password: <%= ENV.fetch("MYSQL_PASSWORD", "yohi1208Qiut22") %>
+  username: <%= ENV.fetch("MYSQL_USERNAME", "root") %>
+  password: <%= ENV.fetch("MYSQL_PASSWORD", "password") %>
   host: <%= ENV.fetch("MYSQL_HOST", "gds_db") %>
 
 development:
   <<: *default
-  database: gds_database
+  database: gds_database_development
 
 test:
   <<: *default
-  database: gds_database
+  database: gds_database_test
 
 production:
   <<: *default
-  database: gds_database
+  database: gds_database_production
   username: hiroto
   password: <%= ENV['WEB_DATABASE_PASSWORD'] %>

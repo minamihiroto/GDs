@@ -1,15 +1,15 @@
 version: '3'
 
 services:
-  # gds_front:
-  #   build: ./front
-  #   container_name: gds_front
-  #   ports:
-  #     - 3001:3000
-  #   volumes:
-  #     - ./front/:/usr/src
-  #   command: "yarn start"
-  #   tty: true
+  gds_front:
+    build: ./front
+    container_name: gds_front
+    ports:
+      - 3001:3000
+    volumes:
+      - ./front/:/usr/src
+    command: "yarn start"
+    tty: true
   gds_back:
     build: ./back_rails
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
@@ -29,10 +29,10 @@ services:
     ports:
       - 6000:3306
     environment:
-      - MYSQL_DATABASE=gds_database
-      - MYSQL_USER=hiroto
-      - MYSQL_PASSWORD=yohi1208Qiut22
-      - MYSQL_ROOT_PASSWORD=yohi1208Qiut22
+      - MYSQL_DATABASE=gds_database_development
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password
     volumes:
       - ./.docker/mysql/etc-mysql.cnf:/etc/mysql/conf.d/etc-mysql.cnf
       - ./.docker/mysql/init:/docker-entrypoint-initdb.d
