@@ -12,7 +12,7 @@ protect_from_forgery
     if @user = true
       render json: @user
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: {status: 'not found'}
     end
   end
   
