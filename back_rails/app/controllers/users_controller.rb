@@ -12,7 +12,7 @@ protect_from_forgery
     if @user = true
       render json: @user
     else
-      puts 'not found'
+      render json: @user.errors, status: :unprocessable_entity
     end
   end
   
@@ -21,7 +21,7 @@ protect_from_forgery
     if @user.save
       render json: @user
     else
-      puts 'error'
+      render json: @user.errors, status: :unprocessable_entity
     end
   end
   
@@ -31,7 +31,7 @@ protect_from_forgery
       @user.save
       render json: @user
     else
-      puts 'error'
+      render json: @user.errors, status: :unprocessable_entity
     end
   end
   
