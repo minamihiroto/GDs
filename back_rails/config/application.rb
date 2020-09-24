@@ -31,5 +31,6 @@ module Web
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.x.cors_allowed_origins = ENV.fetch('CORS_ALLOWED_ORIGINS', 'http://localhost:3001')
   end
 end
