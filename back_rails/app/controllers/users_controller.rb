@@ -9,7 +9,7 @@ protect_from_forgery
 
   def show
     @user = User.find(params[:id])
-    if @user == true
+    if @user
       render json: @user
     else
       render json: {status: 'not found'}
