@@ -1,7 +1,8 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useEffect, useState  } from "react";
 import styled from "styled-components";
 import { Header, Footer, GdsBlock, UserBlock } from "../components/layout";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Main = styled.main`
   padding-top: 100px;
@@ -55,40 +56,21 @@ const UserBlocks = styled.div`
 export type UserType = {
   id: number;
   name: string | null;
-  text: string | null;
-  // image_url: string | null;
-  // sns_url_tw: string | null;
-  // sns_url_fb: string | null;
-  // profile: string | null;
+  profile: string | null;
 };
 
 const Home: FunctionComponent = () => {
-  const users: UserType[] = [
-    {
-      id: 0,
-      name: "田中太郎",
-      text:
-        "関西の私立大学に通う3年生 です。〜〜〜〜〜〜〜〜。〜 〜〜〜〜〜〜、〜〜〜〜〜〜〜〜〜〜〜〜〜 〜〜〜〜〜〜、〜〜〜〜〜〜、...",
-    },
-    {
-      id: 1,
-      name: "山田花子",
-      text:
-        "ああああああああああああああああああああああああああああああああああああああああああああああああ",
-    },
-    {
-      id: 2,
-      name: "田中太郎",
-      text:
-        "関西の私立大学に通う3年生 です。〜〜〜〜〜〜〜〜。〜 〜〜〜〜〜〜、〜〜〜〜〜〜〜〜〜〜〜〜〜 〜〜〜〜〜〜、〜〜〜〜〜〜、...",
-    },
-    {
-      id: 3,
-      name: "田中太郎",
-      text:
-        "関西の私立大学に通う3年生 です。〜〜〜〜〜〜〜〜。〜 〜〜〜〜〜〜、〜〜〜〜〜〜〜〜〜〜〜〜〜 〜〜〜〜〜〜、〜〜〜〜〜〜、...",
-    },
-  ];
+  const [users, setUsers] = useState<UserType[]>([]);
+
+  const getUsers = async () => {
+    const result = await axios.get("http://localhost:4000/users/1");
+    setUsers(result.data);
+  };
+
+  useEffect(() => {
+    getUsers();
+  }, []);
+
   return (
     <>
       <Header />

@@ -33,8 +33,6 @@ const Home: FunctionComponent = () => {
   }, []);
   // ページロード時に自動でgetUsers関数を発火（useEffect)コンポーネント読み込み時（マウント時）に発火
 
-  console.log(users);
-
   return (
     <div>
       {users.id}

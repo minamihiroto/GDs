@@ -60,7 +60,7 @@ const UserBlock: FunctionComponent<UserBlockProps> = ({user}) => {
           <img src={`${process.env.PUBLIC_URL}/Introduce-1.png`} />
           <h1 className="ml-12 fs-28">{user?.name}</h1>
         </Link>
-        <p className="dp-in">{user?.text}</p>
+        <p className="dp-in">{user?.profile}</p>
       </UserblockStyle>
     </>
   );
