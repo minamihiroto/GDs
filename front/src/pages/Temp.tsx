@@ -12,31 +12,33 @@ type User = {
 };
 
 const Home: FunctionComponent = () => {
-  const [users, setUsers] = useState<User[]>([]); // 状態保持（useState)
+  const [users, setUsers] = useState<User>({
+    id: 0,
+    name: "",
+    email: "",
+    image_url: "",
+    sns_url_tw: "",
+    sns_url_fb: "",
+    profile:"",
+  }); // 状態保持（useState)上記で設定したUserの内容をsetUsersに保存、<User[]>([])の([])は初期値、<User[]>の[]は配列の型宣言
+
   const getUsers = async () => {
-    // ユーザー一覧をAPIから取得する関数
-    const result = await axios.get("http://localhost:4000/users");
-    setUsers(result.data);
+// ユーザー一覧をAPIから取得する関数（localhost:4000/usersから完全に取得するまでasyncで定義された関数内のawaitを使って処理を停止している、JSは同期処理をしてしまうため非同期処理が必要）
+    const result = await axios.get("http://localhost:4000/users/1");
+    setUsers(result.data); //resultに結果を入れて、そのデータを保持するためsetUsers(result.data)している
   };
 
   useEffect(() => {
-    // ページロード時に自動でgetUsers関数を発火（useEffect)
     getUsers();
   }, []);
+  // ページロード時に自動でgetUsers関数を発火（useEffect)コンポーネント読み込み時（マウント時）に発火
+
+  console.log(users);
 
   return (
     <div>
-      {users.length > 1 &&
-        users.map((user) => {
-          return (
-            <>
-              <span>
-                id: {user.id} name: {user.name}
-              </span>
-              <br />
-            </>
-          );
-        })}
+      {users.id}
+      {users.name}
     </div>
   );
 };
