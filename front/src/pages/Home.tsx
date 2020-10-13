@@ -63,7 +63,7 @@ const Home: FunctionComponent = () => {
   const [users, setUsers] = useState<UserType[]>([]);
 
   const getUsers = async () => {
-    const result = await axios.get("http://localhost:4000/users/1");
+    const result = await axios.get("http://localhost:4000/users");
     setUsers(result.data);
   };
 
